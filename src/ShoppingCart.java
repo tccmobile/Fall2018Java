@@ -37,7 +37,33 @@ public class ShoppingCart {
     }
 
     public void modifyItem(ItemToPurchase item){
+        int i = 0;
+        boolean found = false;
 
+        while ( (!found) && (i < cartItems.size()) ) {
+            if (cartItems.get(i).getName().equals(item.getName())) {
+                found = true;
+
+                // Update fields
+                if (!item.getDescription().equals("none")) {
+                    cartItems.get(i).setDescription(item.getDescription());
+                }
+
+                if (item.getPrice() != 0) {
+                    cartItems.get(i).setPrice(item.getPrice());
+                }
+
+                if (item.getQuantity() != 0) {
+                    cartItems.get(i).setQuantity(item.getQuantity());
+                }
+            }
+
+            ++i;
+        }
+
+        if(!found) {
+            System.out.println("Item not found in cart. Nothing modified.");
+        }
     }
 
     public int getNumItemsInCart(){
