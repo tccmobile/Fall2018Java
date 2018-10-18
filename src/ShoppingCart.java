@@ -4,7 +4,7 @@ public class ShoppingCart {
 
     private String customerName;
     private String currentDate;
-    private ArrayList<ItemToPurchase> cartItems;
+    public  ArrayList<ItemToPurchase> cartItems;
 
     public ShoppingCart() {
         customerName = "none";
@@ -28,6 +28,7 @@ public class ShoppingCart {
 
 
     public void addItem(ItemToPurchase item){
+        cartItems.add(item);
 
     }
 

@@ -15,8 +15,8 @@ public class ItemToPurchase {
     public ItemToPurchase(String itemName, String itemDescription, int itemPrice, int itemQuantity) {
         this.itemName = itemName;
         this.itemDescription = itemDescription;
-        this.itemPrice = itemPrice;
-        this.itemQuantity = itemQuantity;
+        setPrice(itemPrice);
+        setQuantity(itemQuantity);
     }
 
     public String getDescription() {
@@ -40,7 +40,11 @@ public class ItemToPurchase {
     }
 
     public void setPrice(int itemPrice) {
-        this.itemPrice = itemPrice;
+
+        if (itemPrice>=0)
+            this.itemPrice = itemPrice;
+        else
+            this.itemPrice = 0;
     }
 
     public int getQuantity() {
@@ -48,7 +52,10 @@ public class ItemToPurchase {
     }
 
     public void setQuantity(int itemQuantity) {
-        this.itemQuantity = itemQuantity;
+        if (itemQuantity>=0)
+            this.itemQuantity = itemQuantity;
+        else
+            this.itemQuantity = 0;
     }
 
 
