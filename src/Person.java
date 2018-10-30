@@ -5,8 +5,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return "I am a person and my name is" + name + '\'' +
-                ", and I'm " + age + "years old.";
+        return "I am a person and my name is " + name + ' ' +
+                ", and I'm " + age + " years old.";
 
     }
 
@@ -44,5 +44,9 @@ public class Person {
     public void Print(){
         System.out.println("name = " + name);
         System.out.println("age = " + age);
+    }
+
+    public void eat(String food){
+        System.out.println("Im eating some "+ food);
     }
 }
