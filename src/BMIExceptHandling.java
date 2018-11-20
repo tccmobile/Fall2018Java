@@ -43,6 +43,7 @@ public class BMIExceptHandling {
             }
             catch (InputMismatchException e){
                 System.out.println("You didn't enter an integer!");
+                scnr.nextLine();
             }
             catch (Exception excpt) {
                 // Prints the error message passed by throw statement
